@@ -36,7 +36,7 @@ public class ContentServiceImpl implements ContentService {
 		RestTemplate resTemplate  = new RestTemplate();
 		Content content = resTemplate.getForObject("https://api.instagram.com/v1/tags/r2/media/recent?access_token=1557413059.214e029.46b6cdec4fb94b099f48655808576832", Content.class);
 		
-		System.out.println(content);
+		System.out.println(content.toString());
 		
 		return null;
 	}
@@ -44,10 +44,10 @@ public class ContentServiceImpl implements ContentService {
 	@Override
 	public Collection<Content> getContentByTag(String userId, String hashTag) {
 		Content content1 = new Content();
-		content1.setProfile_picture("http://www.google.com.ar");
+		//content1.setProfile_picture("http://www.google.com.ar");
 
 		Content content2 = new Content();
-		content2.setProfile_picture("http://www.google.com.ar");
+		//content2.setProfile_picture("http://www.google.com.ar");
 		return Arrays.asList(content1, content2);
 	}
 

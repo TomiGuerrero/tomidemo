@@ -1,14 +1,26 @@
 package com.redbeechallenge.model;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Content {
 
-    private Data data;
+    private List<Data> data;
  
 	
-    public Content() {
+    public List<Data> getData() {
+		return data;
+	}
+
+
+	public void setData(List<Data> data) {
+		this.data = data;
+	}
+
+
+	public Content() {
     
     }   
    

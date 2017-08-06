@@ -1,16 +1,21 @@
 package com.redbeechallenge.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Data {
 	
 	private String id;
 	private User user;
-	private Tags tags;
+	private List<String> tags;
 	private String link;
-	
+
 	public Data() {
 		
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -23,10 +28,10 @@ public class Data {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Tags getTags() {
+	public List<String> getTags() {
 		return tags;
 	}
-	public void setTags(Tags tags) {
+	public void setTags(List<String> tags) {
 		this.tags = tags;
 	}
 	public String getLink() {

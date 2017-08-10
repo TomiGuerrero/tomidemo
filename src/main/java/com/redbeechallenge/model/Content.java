@@ -6,10 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Content {
-
     private List<Data> data;
- 
-	
+
     public List<Data> getData() {
 		return data;
 	}
@@ -20,9 +18,4 @@ public class Content {
 	}
 
 
-	public Content() {
-    
-    }   
-   
-    
 }

@@ -1,45 +1,80 @@
 package com.redbeechallenge.model;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.Collection;
+
+@Entity
+@Table(name="data")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Data {
-	
+public class Data implements Serializable{
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="id")
 	private String id;
-	private User user;
-	private List<String> tags;
+
+	private transient User user;
+	private transient Collection<String> tags;
+
+	@Column(name="tags")
+	private String tag;
+
+	@Column(name="link")
 	private String link;
 
-	public Data() {
-		
+
+	public Collection<String> getTags() {
+		return tags;
+	}
+
+	public Data setTags(Collection<String> tags) {
+		this.tags = tags;
+		return this;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public String getId() {
 		return id;
 	}
-	public void setId(String id) {
+
+	public Data setId(String id) {
 		this.id = id;
+		return this;
 	}
+
 	public User getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+
+	public Data setUser(User user) {
 		this.user = user;
+		return this;
 	}
-	public List<String> getTags() {
-		return tags;
+
+	public String getTag() {
+		return tag;
 	}
-	public void setTags(List<String> tags) {
-		this.tags = tags;
+
+	public Data setTag(String tag) {
+		this.tag = tag;
+		return this;
 	}
+
 	public String getLink() {
 		return link;
 	}
-	public void setLink(String link) {
-		this.link = link;
-	}
-	
 
+	public Data setLink(String link) {
+		this.link = link;
+		return this;
+	}
 }

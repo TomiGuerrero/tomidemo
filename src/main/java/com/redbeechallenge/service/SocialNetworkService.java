@@ -1,9 +1,16 @@
 package com.redbeechallenge.service;
 
-import java.util.Collection;
+import java.util.List;
 
+import com.redbeechallenge.model.Content;
+import com.redbeechallenge.model.Data;
+import com.redbeechallenge.model.Tag;
 
 public interface SocialNetworkService {
 
-    Collection<Object> getContentByTag(String tag);
+	Content getContentByTag(Tag tag);
+
+    Tag createTag(String tagValue);
+
+    List<Data> findByTag(Tag tag);
 }

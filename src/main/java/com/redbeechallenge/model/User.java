@@ -1,27 +1,30 @@
 package com.redbeechallenge.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Column;
-
-//@Entity
-//@Embeddable
+@Embeddable
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+@Access(AccessType.FIELD)
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Column(name = "user_id")
 	private String id;
-
 	@Column(name = "user_full_name")
 	private String full_name;
-
 	@Column(name = "user_profile_picture")
 	private String profile_picture;
-
 	@Column(name = "user_username")
 	private String username;
 
 	public String getId() {
-		return id;
+		return this.id;
 	}
 
 	public User setId(String id) {
@@ -30,7 +33,7 @@ public class User {
 	}
 
 	public String getFull_name() {
-		return full_name;
+		return this.full_name;
 	}
 
 	public User setFull_name(String full_name) {
@@ -39,7 +42,7 @@ public class User {
 	}
 
 	public String getProfile_picture() {
-		return profile_picture;
+		return this.profile_picture;
 	}
 
 	public User setProfile_picture(String profile_picture) {
@@ -48,7 +51,7 @@ public class User {
 	}
 
 	public String getUsername() {
-		return username;
+		return this.username;
 	}
 
 	public User setUsername(String username) {

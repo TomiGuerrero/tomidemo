@@ -10,7 +10,11 @@ public interface SocialNetworkService {
 
 	Content getContentByTag(Tag tag);
 
-    Tag createTag(String tagValue);
+	Tag createTag(String tagValue);
 
-    List<Data> findByTag(Tag tag);
+	List<Data> findByTag(Tag tag);
+
+	List<Data> findAll();
+
+	void deleteByTag(String tag);
 }

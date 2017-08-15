@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface DataRepository extends CrudRepository<Data, String> {
 
 	List<Data> findByTag(String tag);
+
 	List<Data> findAll();
 
 }

@@ -5,12 +5,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name="tags")
+@Table(name = "tags")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Tag {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String value;
 
@@ -34,8 +34,6 @@ public class Tag {
 
 	@Override
 	public String toString() {
-		return "Tag{" +
-				"value='" + value + '\'' +
-				'}';
+		return "Tag{" + "value='" + value + '\'' + '}';
 	}
 }

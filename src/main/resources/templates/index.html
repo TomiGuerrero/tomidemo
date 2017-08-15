@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title>Red Bee Challenge</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+<script src="/js/controller.js"></script>
+
+</head>
+<body>
+
+	<div class="container" ng-app="app">
+
+		<div ng-controller="postcontroller">
+			<form name="customerForm" ng-submit="submitForm()">
+				<input type="text" name="hashtag" class="form-control"
+					ng-model="hashtag" />
+				<button type="submit" class="btn btn-primary">Seguir</button>
+			</form>
+			<p>{{postResultMessage}}</p>
+		</div>
+		<div ng-controller="deletecontroller">
+			<form name="customerForm" ng-submit="deleteForm()">
+				<input type="text" name="hashtagd" class="form-control"
+					ng-model="hashtagd" />
+				<button type="submit" class="btn btn-primary">Eliminar</button>
+			</form>
+			<p>{{postResultMessage}}</p>
+		</div>
+
+		<div ng-controller="getcontroller">
+			<button id="btn-id" ng-click="getfunction()">Get Data</button>
+
+			<table>
+				<tr ng-repeat="d in response">
+					<td><img src="{{d.images.standard_resolution.url}}"
+						width="300" height="320" alt="Error al cargar la imagen"></img></td>
+					<td face="verdana" color="black">Hashtag: {{d.tag}} <br />
+						UserName: {{d.user.username}}<br /> FullName:
+						{{d.user.full_name}} <br /> Link: {{d.link}}
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+	</div>
+</body>
+</html>

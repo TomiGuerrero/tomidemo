@@ -22,20 +22,20 @@ public class InstagramServiceImpl implements SocialNetworkService {
 
 	@Autowired
 	private TagRepository tagRepository;
-	
+
 	@Override
 	public Content getContentByTag(Tag tag) {
 		String accessToken = "1557413059.214e029.46b6cdec4fb94b099f48655808576832";
-		String path = String.format("https://api.instagram.com/v1/tags/%s/media/recent?access_token=%s", tag.getValue(), accessToken);
+		String path = String.format("https://api.instagram.com/v1/tags/%s/media/recent?access_token=%s", tag.getValue(),
+				accessToken);
 
-		RestTemplate resTemplate  = new RestTemplate();
+		RestTemplate resTemplate = new RestTemplate();
 		Content content = resTemplate.getForObject(path, Content.class);
 
-		for(Data d : content.getData()) {
+		for (Data d : content.getData()) {
 			d.setTag(tag.getValue());
 			dataRepository.save(d);
 		}
-
 
 		return content;
 	}
@@ -45,7 +45,6 @@ public class InstagramServiceImpl implements SocialNetworkService {
 		Tag tag = new Tag().setValue(tagValue);
 		tag = tagRepository.save(tag);
 
-		
 		getContentByTag(tag);
 
 		return tag;
@@ -54,11 +53,25 @@ public class InstagramServiceImpl implements SocialNetworkService {
 	@Override
 	public List<Data> findByTag(Tag tag) {
 		List<Data> list = new ArrayList<>();
-		
+
 		list = dataRepository.findByTag(tag.getValue());
 
+		return list;
+	}
+
+	@Override
+	public List<Data> findAll() {
+		List<Data> list = new ArrayList<>();
+		list = dataRepository.findAll();
 
 		return list;
-	}	
+	}
+
+	@Override
+	public void deleteByTag(String tag) {
+		List<Data> list = new ArrayList<>();
+		list = dataRepository.findByTag(tag);
+		dataRepository.delete(list);
+	}
 
 }

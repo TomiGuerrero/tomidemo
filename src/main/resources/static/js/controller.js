@@ -25,7 +25,9 @@ app.controller('postcontroller', function($scope, $http,$location){
 });
 
 app.controller('getcontroller',function($scope,$http, $location){
+	
 	$scope.getfunction = function(){
+		
 		var url = $location.absUrl() + "data";
 		
 		var config = {
@@ -42,6 +44,7 @@ app.controller('getcontroller',function($scope,$http, $location){
 		
 		});
 	}
+	setInterval($scope.getfunction,1000);
 });
 
 app.controller('deletecontroller',function($scope,$http, $location){

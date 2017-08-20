@@ -1,7 +1,6 @@
 package com.redbeechallenge.controller;
 
 import com.redbeechallenge.model.Data;
-import com.redbeechallenge.model.Tag;
 import com.redbeechallenge.service.SocialNetworkService;
 
 import org.springframework.beans.factory.annotation.Autowired;

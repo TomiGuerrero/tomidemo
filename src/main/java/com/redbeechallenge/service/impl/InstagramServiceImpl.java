@@ -25,7 +25,7 @@ public class InstagramServiceImpl implements SocialNetworkService {
 
 	@Override
 	public Content getContentByTag(Tag tag) {
-		String accessToken = "1557413059.214e029.46b6cdec4fb94b099f48655808576832";
+		String accessToken = "5889233454.7af28b1.583759645809406aaee724405a130ad2";
 		String path = String.format("https://api.instagram.com/v1/tags/%s/media/recent?access_token=%s", tag.getValue(),
 				accessToken);
 

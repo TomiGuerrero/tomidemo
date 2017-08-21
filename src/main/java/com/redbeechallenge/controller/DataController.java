@@ -1,6 +1,7 @@
 package com.redbeechallenge.controller;
 
 import com.redbeechallenge.model.Data;
+import com.redbeechallenge.model.Tag;
 import com.redbeechallenge.service.SocialNetworkService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 
 @RestController
-@RequestMapping(path = "/data")
+@RequestMapping(path = "/boards")
 public class DataController {
 
 	@Autowired
@@ -23,6 +24,13 @@ public class DataController {
 	public Collection<Data> getContent(HttpServletRequest request) {
 
 		return instagramService.findAll();
+
+	}
+
+	@RequestMapping(value = "/data/{value}", method = RequestMethod.GET)
+	public Collection<Data> getContent(@PathVariable String value, HttpServletRequest request) {
+
+		return instagramService.findByTag(new Tag().setValue(value));
 
 	}
 

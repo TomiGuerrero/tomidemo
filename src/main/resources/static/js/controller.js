@@ -28,7 +28,7 @@ app.controller('getcontroller',function($scope,$http, $location){
 	
 	$scope.getfunction = function(){
 		
-		var url = $location.absUrl() + "data";
+		var url = $location.absUrl() + "boards";
 		
 		var config = {
 				headers: {
@@ -44,12 +44,12 @@ app.controller('getcontroller',function($scope,$http, $location){
 		
 		});
 	}
-	setInterval($scope.getfunction,3000);
+	setInterval($scope.getfunction,2000);
 });
 
 app.controller('deletecontroller',function($scope,$http, $location){
 	$scope.deleteForm = function(){
-		var url = $location.absUrl() + "data/delete/" + $scope.hashtagd;
+		var url = $location.absUrl() + "boards/delete/" + $scope.hashtagd;
 		
 		var config = {
 				headers: {

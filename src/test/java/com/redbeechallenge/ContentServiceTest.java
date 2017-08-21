@@ -14,31 +14,30 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-
 @SpringBootTest
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes={RedBeeChallengeApplication.class})
+@ContextConfiguration(classes = { RedBeeChallengeApplication.class })
 public class ContentServiceTest extends Assert {
 
-    @Autowired
-    private SocialNetworkService instagramService;
+	@Autowired
+	private SocialNetworkService instagramService;
 
-    @Test
-    public void shouldCreateTagAndFetchContent() {
-        Tag tag = instagramService.createTag("r2");
-        assertTrue(tag.getId() != null);
-    }
+	@Test
+	public void shouldCreateTagAndFetchContent() {
+		Tag tag = instagramService.createTag("r2");
+		assertTrue(tag.getId() != null);
+	}
 
-    @Test
-    public void shouldGetContentByTag() {
-        List<Data> list = instagramService.findByTag(new Tag().setValue("r2"));
-        assertEquals(list.size(), 1);
-    }
+	@Test
+	public void shouldGetContentByTag() {
+		List<Data> list = instagramService.findByTag(new Tag().setValue("r2"));
+		assertEquals(list.size(), 1);
+	}
 
-    @Test
-    public void shouldGetContentByNonExistentTag() {
-        List<Data> list = instagramService.findByTag(new Tag().setValue("r3"));
-        assertEquals(list.size(), 0);
-    }
+	@Test
+	public void shouldGetContentByNonExistentTag() {
+		List<Data> list = instagramService.findByTag(new Tag().setValue("r3"));
+		assertEquals(list.size(), 0);
+	}
 
 }

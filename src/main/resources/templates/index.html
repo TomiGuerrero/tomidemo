@@ -57,12 +57,10 @@
 			<div id="wrapper">
 				<div id="columns">
 					<div class="pin" ng-repeat="d in response">
-						<img src="{{d.images.standard_resolution.url}}" />
+						<a href="{{d.link}}" target="blank"><img src="{{d.images.standard_resolution.url}}" /></a>
 						<p>
 							Hashtag: {{d.tag}}<br /> UserName: {{d.user.username}}<br />
-							FullName: {{d.user.full_name}}<br /> <a href="{{d.link}}"
-								class="btn btn-info btn-xs" role="button" target="blank"
-								style="font-family: Arial, verdana; font-size: 10pt; width: 200px; height: 30px; margin: 0 auto;">Link</a>
+							FullName: {{d.user.full_name}}<br />
 						</p>
 					</div>
 				</div>
@@ -73,4 +71,4 @@
 
 	</div>
 </body>
-</html>
+</html> 

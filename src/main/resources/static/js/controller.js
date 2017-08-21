@@ -67,4 +67,4 @@ app.controller('deletecontroller',function($scope,$http, $location){
 		
 		});
 	}
-});
+}); 

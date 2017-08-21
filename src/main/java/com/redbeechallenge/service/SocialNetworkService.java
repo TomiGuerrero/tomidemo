@@ -18,3 +18,4 @@ public interface SocialNetworkService {
 
 	void deleteByTag(String tag);
 }
+ 

@@ -44,7 +44,7 @@ app.controller('getcontroller',function($scope,$http, $location){
 		
 		});
 	}
-	setInterval($scope.getfunction,1000);
+	setInterval($scope.getfunction,3000);
 });
 
 app.controller('deletecontroller',function($scope,$http, $location){

@@ -17,5 +17,5 @@ public interface SocialNetworkService {
 	List<Data> findAll();
 
 	void deleteByTag(String tag);
-}
+} 
  

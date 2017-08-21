@@ -10,5 +10,5 @@ public class RedBeeChallengeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RedBeeChallengeApplication.class, args);
-	}
+	} 
 }

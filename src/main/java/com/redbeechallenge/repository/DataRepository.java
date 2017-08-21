@@ -14,5 +14,5 @@ public interface DataRepository extends CrudRepository<Data, String> {
 
 	List<Data> findAll();
 
-}
+} 
  

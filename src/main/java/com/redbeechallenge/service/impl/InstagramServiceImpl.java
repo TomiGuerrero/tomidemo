@@ -74,4 +74,4 @@ public class InstagramServiceImpl implements SocialNetworkService {
 		dataRepository.delete(list);
 	}
 
-} 
+}  

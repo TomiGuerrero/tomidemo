@@ -21,4 +21,4 @@ public class Image {
 		this.standard_resolution = standard_resolution;
 	}
 
-} 
+}  

@@ -96,4 +96,4 @@ public class Data implements Serializable {
 		this.images = images;
 	}
 
-}  
+}

@@ -39,4 +39,4 @@ public class DataController {
 
 		instagramService.deleteByTag(value);
 	}
-} 
+}
